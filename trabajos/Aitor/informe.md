@@ -1,26 +1,41 @@
 # Informe de Base de Datos
 
 ## 1. Descripción general
-Esta base de datos sirve para gestionar clientes, compras de cocinas e instalaciones.
+Esta base de datos sirve para gestionar la información de una empresa de venta de cocinas, incluyendo clientes, productos, compras e instalaciones. Permite controlar todo el proceso desde la compra hasta la instalación final.
 
 ## 2. Estructura
-- cliente
-- cocinas
-- compras
-- instalacion
-- instaladores
+- Tablas:
+  - cliente
+  - cocinas
+  - compras
+  - instalacion
+  - instaladores
+
+- Relaciones:
+  - Un cliente puede realizar varias compras
+  - Cada compra está asociada a una cocina
+  - Cada instalación está relacionada con una compra
+  - Los instaladores realizan las instalaciones
 
 ## 3. Análisis
-La base de datos está bien estructurada y permite relacionar clientes con compras e instalaciones.
+- Qué está bien diseñado:
+  - Las relaciones entre tablas están bien definidas mediante claves foráneas
+  - Existe integridad referencial entre clientes, compras e instalaciones
+
+- Qué no está claro:
+  - Algunos campos podrían tener mejor normalización
+  - El campo de instalación podría separarse en más información detallada
 
 ## 4. Problemas detectados
-- Algunos campos podrían estar mejor normalizados
-- Faltan algunas restricciones adicionales en ciertos datos
+- Algunos registros pueden tener valores por defecto poco claros
+- Falta validación más estricta en algunos campos numéricos
+- Algunas relaciones podrían ser más detalladas
 
 ## 5. Propuestas de mejora
-- Añadir más validaciones en campos
-- Mejorar normalización de algunas tablas
-- Añadir historial de cambios
+- Crear una tabla de “pagos” para registrar métodos de pago
+- Añadir una tabla de “proveedores” para las cocinas
+- Mejorar la normalización separando direcciones en campos más pequeños
+- Añadir más restricciones (NOT NULL, CHECK)
 
 ## 6. Conclusión personal
-He aprendido a trabajar con bases de datos relacionales, consultas SQL y relaciones entre tablas.
+He aprendido a trabajar con bases de datos relacionales, a realizar consultas SQL, a entender las relaciones entre tablas y a estructurar un proyecto completo usando GitHub y MySQL.
